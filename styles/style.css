@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    
+    grid-template: (
+        "header" "header" "header" "header" 
+        "aside" "main" "main" "main"
+        "footer" "footer" "footer" "footer" 
+    );
+
+    
+}
+
+header{
+    text-align: center;
+    grid-area: "header";
+}
+header nav{
+    display: flex;
+    justify-content: center;
+}
+
+aside{
+    grid-area: "aside";
+}
+
+main{
+    grid-area: "main";
+}
+
+footer{
+    grid-area: "footer";
+}

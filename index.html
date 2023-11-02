@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cupra/Seat Inventory</title>
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Cupra/Seat Inventory</h1>
+        <nav>
+            <ul>Inicio</ul>
+            <ul>Buscar Vehículo</ul>
+            <ul>Total Coste Vehículos</ul>
+        </nav>
+    </header>
+    <!--Formulario para añadir productos-->
+    <aside>
+        <form>
+            <label for="model-brand">Marca: </label>
+            <input type="text" id="model-brand" required />
+            <label for="model-name">Modelo: </label>
+            <input type="text" id="model-name" required />
+            <label for="model-quantity">Cantidad: </label>
+            <input type="text" id="model-quantity" required />
+            <label for="model-price">Precio: </label>
+            <input type="text" id="model-price" required />
+            <button type="submit">Agregar vehículo</button>
+        </form>
+    </aside>
+
+    <main>
+        <table>
+            <tr>
+                <th>Marca</th>
+                <th>Modelo</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+        </table>
+    </main>
+    <footer>
+        <p>Enrique Fernandez-Campoamor Fernandez</p>
+    </footer>
+</body>
+
+</html>
