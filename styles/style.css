@@ -2,37 +2,64 @@
     margin: 0;
     padding: 0;
 }
+/* TODO: REDIMENSIONAR LOGO */
+.logo{
+    width: 300px;
+    height: auto;
+    margin-left: 2rem;  
+}
 
 body{
+    background-color: rgb(95, 95, 95);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    
-    grid-template: (
-        "header" "header" "header" "header" 
-        "aside" "main" "main" "main"
-        "footer" "footer" "footer" "footer" 
-    );
-
-    
+    grid-template-rows: 80px 1fr 60px;
+    grid-template-areas: 
+        "header header header header" 
+        "sidebar main main main"
+        "footer footer footer footer"
+    ;
+    gap: 10px;
+    min-height: 100vh;
+   
 }
 
 header{
-    text-align: center;
-    grid-area: "header";
+    text-align: left;
+    background-color: rgb(18, 17, 90);
+    color: rgb(163, 114, 8);
+    
+    grid-area: header;
 }
+
+
 header nav{
+
     display: flex;
-    justify-content: center;
+    justify-content: right;
 }
 
 aside{
-    grid-area: "aside";
+    border: 2px solid;
+    
+    
+    grid-area: sidebar;
+}
+
+aside form{
+    display: flex;
+    flex-direction: column;
+    
 }
 
 main{
-    grid-area: "main";
+    
+    grid-area: main;
+    
 }
 
 footer{
-    grid-area: "footer";
+    text-align: center;
+    grid-area: footer;
+    
 }

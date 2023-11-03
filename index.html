@@ -5,11 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cupra/Seat Inventory</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="/styles/style.css">
 </head>
 
 <body>
     <header>
+        <!--<img src="/assets/img/seat-cupra-logo.png" alt="Logo de las marcas SEAT y CUPRA" class="logo">-->
         <h1>Cupra/Seat Inventory</h1>
         <nav>
             <ul>Inicio</ul>
@@ -18,33 +20,39 @@
         </nav>
     </header>
     <!--Formulario para añadir productos-->
-    <aside>
-        <form>
-            <label for="model-brand">Marca: </label>
-            <input type="text" id="model-brand" required />
-            <label for="model-name">Modelo: </label>
-            <input type="text" id="model-name" required />
-            <label for="model-quantity">Cantidad: </label>
-            <input type="text" id="model-quantity" required />
-            <label for="model-price">Precio: </label>
-            <input type="text" id="model-price" required />
-            <button type="submit">Agregar vehículo</button>
-        </form>
-    </aside>
-
-    <main>
-        <table>
-            <tr>
-                <th>Marca</th>
-                <th>Modelo</th>
-                <th>Precio</th>
-                <th>Acciones</th>
-            </tr>
-        </table>
-    </main>
+   
+        <aside>
+            <h2>Añadir Vehículos</h2>
+            <form>
+                <label for="model-brand">Marca: </label>
+                <input type="text" id="model-brand" required />
+                <label for="model-name">Modelo: </label>
+                <input type="text" id="model-name" required />
+                <label for="model-quantity">Cantidad: </label>
+                <input type="text" id="model-quantity" required />
+                <label for="model-price">Precio: </label>
+                <input type="text" id="model-price" required />
+                <button type="submit">Agregar vehículo</button>
+            </form>
+        </aside>
+        <main>
+            <table>
+                <tr>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Precio</th>
+                    <th>Acciones</th>
+                </tr>
+                <tbody id="clear-table">
+ 
+                </tbody>
+            </table>
+        </main>
+    
     <footer>
         <p>Enrique Fernandez-Campoamor Fernandez</p>
     </footer>
+    <script type="module" src="/scripts/main.js"></script>
 </body>
 
 </html>
