@@ -15,6 +15,6 @@ export const listModels = () =>{
         cell1.innerText = item.marca
         cell2.innerText = item.modelo
         cell3.innerText = item.cantidad
-        cell4.innerText = item.precio
+        cell4.innerText = item.precio + ' €'
     })
 }
