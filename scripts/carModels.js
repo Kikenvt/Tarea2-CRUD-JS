@@ -13,4 +13,6 @@ const inventory = [
   { id: 9, marca: "Seat", modelo: "Tarraco", cantidad: 4, precio: 33400 },
   { id: 10, marca: "Seat", modelo: "Alhambra", cantidad: 1, precio: 34000 },
   { id: 11, marca: "Seat", modelo: "Leon", cantidad: 10, precio: 25500 },
+  { id: 12, marca: "Seat", modelo: "asd", cantidad: 10, precio: 25500 },
+  { id: 13, marca: "Seat", modelo: "asd", cantidad: 10, precio: 25500 },
 ]

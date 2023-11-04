@@ -136,3 +136,23 @@ footer{
     box-shadow: none;
     transform: 0.5;
 }
+
+
+.edit-modal-styles{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content{
+    background-color: #eee;
+    width: 50%;
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 20px;
+    position: relative;
+}
