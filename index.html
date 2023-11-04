@@ -11,7 +11,6 @@
 
 <body>
     <header>
-        <!--<img src="/assets/img/seat-cupra-logo.png" alt="Logo de las marcas SEAT y CUPRA" class="logo">-->
         <h1>Cupra/Seat Inventory</h1>
         <nav>
             <ul>Inicio</ul>
@@ -23,20 +22,20 @@
    
         <aside>
             <h2>Añadir Vehículos</h2>
-            <form>
+            <form id="model-form-events">
                 <label for="model-brand">Marca: </label>
                 <input type="text" id="model-brand" required />
                 <label for="model-name">Modelo: </label>
                 <input type="text" id="model-name" required />
                 <label for="model-quantity">Cantidad: </label>
-                <input type="text" id="model-quantity" required />
+                <input type="number" id="model-quantity" required />
                 <label for="model-price">Precio: </label>
-                <input type="text" id="model-price" required />
+                <input type="number" id="model-price" required />
                 <button type="submit">Agregar vehículo</button>
             </form>
         </aside>
         <main>
-            <table>
+            <table class="inventory-table-styles">
                 <tr>
                     <th>Marca</th>
                     <th>Modelo</th>

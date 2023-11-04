@@ -16,5 +16,18 @@ export const listModels = () =>{
         cell2.innerText = item.modelo
         cell3.innerText = item.cantidad
         cell4.innerText = item.precio + ' €'
+
+        const deleteButton = document.createElement("button");
+        deleteButton.innerText = "BORRAR";
+        deleteButton.classList = "deleteBtn";
+
+        cell5.appendChild(deleteButton);
+
+        const editButton = document.createElement("button");
+        editButton.innerText = "EDITAR";
+        editButton.classList = "editBtn"
+
+        cell5.appendChild(editButton);
+
     })
 }

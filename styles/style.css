@@ -3,11 +3,7 @@
     padding: 0;
 }
 /* TODO: REDIMENSIONAR LOGO */
-.logo{
-    width: 300px;
-    height: auto;
-    margin-left: 2rem;  
-}
+
 
 body{
     background-color: rgb(95, 95, 95);
@@ -21,39 +17,41 @@ body{
     ;
     gap: 10px;
     min-height: 100vh;
-   
 }
 
 header{
     text-align: left;
     background-color: rgb(18, 17, 90);
-    color: rgb(163, 114, 8);
-    
+    color: rgb(163, 114, 8); 
     grid-area: header;
 }
 
 
 header nav{
-
     display: flex;
     justify-content: right;
 }
 
 aside{
     border: 2px solid;
-    
-    
+    margin: 10px;
+    padding: 10px;
     grid-area: sidebar;
 }
 
 aside form{
     display: flex;
     flex-direction: column;
-    
+    margin-right: 100px;
+    padding:20px;
+    border: 2px solid;
+    border-radius: 5px;
+    box-shadow: (1,1,1, #000000); /* TODO*/
 }
 
 main{
-    
+    margin: 10px;
+    border: 1px solid; 
     grid-area: main;
     
 }
@@ -62,4 +60,22 @@ footer{
     text-align: center;
     grid-area: footer;
     
+}
+
+.inventory-table-styles{
+    border-collapse: collapse;
+    border: 1px solid;
+    border-radius: 10px; 
+    width: 90%;
+    margin: 20px auto;
+    
+}
+
+.inventory-table-styles th,
+.inventory-table-styles td{
+    border: 1px solid #cccc;
+    
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
 }

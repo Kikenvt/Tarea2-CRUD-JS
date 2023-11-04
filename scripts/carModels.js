@@ -1,6 +1,6 @@
-export { inventory }
-
 // Inventario inicial
+export{ inventory }
+
 const inventory = [
   { id: 1, marca: "Cupra", modelo: "Formentor", cantidad: 12, precio: 37000 },
   { id: 2, marca: "Cupra", modelo: "Leon", cantidad: 10, precio: 32300 },
