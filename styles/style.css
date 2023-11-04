@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Julius';
+    src: url("../assets/fonts/Julius_Sans_One/JuliusSansOne-Regular.ttf") format('truetype');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('truetype');
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -6,7 +15,7 @@
 
 
 body{
-    background-color: rgb(95, 95, 95);
+    background-color: #ddd;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 80px 1fr 60px;
@@ -20,8 +29,15 @@ body{
 }
 
 header{
+    padding: 5px;
+    margin: 5px;
+    border: 2px solid black;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px  black;
+
+    font-family: 'Julius';
     text-align: left;
-    background-color: rgb(18, 17, 90);
+    background-color: #eee;
     color: rgb(163, 114, 8); 
     grid-area: header;
 }
@@ -33,7 +49,7 @@ header nav{
 }
 
 aside{
-    border: 2px solid;
+    
     margin: 10px;
     padding: 10px;
     grid-area: sidebar;
@@ -44,16 +60,19 @@ aside form{
     flex-direction: column;
     margin-right: 100px;
     padding:20px;
-    border: 2px solid;
+    border: 1px solid;
     border-radius: 5px;
-    box-shadow: (1,1,1, #000000); /* TODO*/
+    box-shadow: 1px 1px 1px  black;
 }
 
 main{
     margin: 10px;
     border: 1px solid; 
     grid-area: main;
-    
+    min-width: 800px;
+    height: 800px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 footer{
@@ -74,8 +93,46 @@ footer{
 .inventory-table-styles th,
 .inventory-table-styles td{
     border: 1px solid #cccc;
-    
+    font-family: 'Montserrat';
     padding: 8px;
     text-align: center;
     font-size: 1.5rem;
+}
+
+.total-costs{
+    text-align: right;
+}
+
+.deleteBtn{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: red;
+    box-shadow: 1px 1px 1px  black;
+}
+
+.editBtn{
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: blue;
+    box-shadow: 1px 1px 1px  black;
+    color: white;
+}
+
+.deleteBtn:hover{
+    background-color: rgb(255, 39, 39);
+    box-shadow: none;
+    transform: 0.5;
+
+}
+
+.editBtn:hover{
+    background-color: rgb(52, 52, 255);
+    box-shadow: none;
+    transform: 0.5;
 }

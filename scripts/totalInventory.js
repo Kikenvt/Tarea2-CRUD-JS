@@ -10,5 +10,5 @@ export const totalInventory = ()=>{
     totalPrice += (item.cantidad * item.precio)
 })
 
-    totalTemplate.innerHTML = `${totalPrice}`
+    totalTemplate.innerHTML = `Coste total del inventario ${totalPrice} €`
 }
