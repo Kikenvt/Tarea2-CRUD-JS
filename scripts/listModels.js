@@ -19,8 +19,20 @@ export const listModels = () =>{
 
         const deleteButton = document.createElement("button");
         deleteButton.innerText = "BORRAR";
-        deleteButton.classList = "deleteBtn";
+        deleteButton.classList = "deleteBtn"
+        deleteButton.addEventListener("click", () =>{
+            const clearTable = document.getElementById("clear-table")
 
+            if (confirm(`¿Estas seguro de que deseas borrar "${item.marca} ${item.modelo}"?`)){
+                const index = inventory.findIndex(model => model.id === item.id)
+
+                if(index !== -1){
+                    inventory.splice(index, 1)
+                }
+            }
+            clearTable.innerHTML = ""
+            listModels()
+        })
         cell5.appendChild(deleteButton);
 
         const editButton = document.createElement("button");
