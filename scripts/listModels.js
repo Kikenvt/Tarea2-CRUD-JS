@@ -1,4 +1,5 @@
 import { inventory } from "./carModels.js";
+import { totalInventory } from "./totalInventory.js";
 
 export const listModels = () =>{
     const clearTable = document.getElementById("clear-table")
@@ -42,4 +43,6 @@ export const listModels = () =>{
         cell5.appendChild(editButton);
 
     })
+    // Agregamos aqui la funcion de mostrar total Inventario para que cada vez que editemos, borremos o añadamos un modelos se actualize
+    totalInventory()
 }

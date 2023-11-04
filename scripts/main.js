@@ -6,15 +6,12 @@
 
 import { listModels } from "./listModels.js";
 import { insertModels } from "./insertModels.js";
+import { searchModel } from "./searchModel.js";
 
 document.addEventListener("DOMContentLoaded", listModels)
 
-document.addEventListener("DOMContentLoaded", () =>{
+document.addEventListener("DOMContentLoaded", insertModels)
 
-    const btnForm = document.getElementById("model-form-events")
+document.addEventListener("DOMContentLoaded", searchModel)
 
-    btnForm.addEventListener("click", ()=> {
-        insertModels()
-    })
 
-})

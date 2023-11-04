@@ -3,6 +3,7 @@ import { listModels } from "./listModels.js";
 
 export const insertModels = () =>{
     const modelForm = document.getElementById("model-form-events")
+    
     modelForm.addEventListener("submit", (event) =>{
 
         event.preventDefault()
