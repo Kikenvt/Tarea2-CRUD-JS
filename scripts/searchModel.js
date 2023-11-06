@@ -1,7 +1,7 @@
 import { inventory } from "./carModels.js"
 import { deleteModel } from "./deleteModel.js"
 import { listModels } from "./listModels.js"
-
+import { editModel } from "./editModel.js"
 
 export const searchModel = () => {
   const searchInput = document.getElementById("search-input")
@@ -32,7 +32,7 @@ export const searchModel = () => {
         const deleteButton = document.createElement("button")
         deleteButton.innerText = "BORRAR"
         deleteButton.classList = "deleteBtn"
-        console.log(modelSearch)
+       // console.log(modelSearch)
         deleteButton.addEventListener("click", () => {
           ////////
           // ERRORES MIRAR BIEN 
@@ -42,9 +42,16 @@ export const searchModel = () => {
           //////////
         })
         cell5.appendChild(deleteButton)
+        const editButton = document.createElement("button")
+      editButton.innerText = "EDITAR"
+      editButton.classList = "editBtn"
+      editButton.addEventListener("click", () => {
+      editModel(car)
+    })
+
+    cell5.appendChild(editButton)
       })
     }
-    searchResult.innerText = `${modelSearch.marca} ${modelSearch.modelo} Cantidad: ${modelSearch.cantidad}`
   }
 
   searchBtn.addEventListener("click", (event) => {
