@@ -1,6 +1,7 @@
 import { inventory } from "./carModels.js"
+import { deleteModel } from "./deleteModel.js"
 import { listModels } from "./listModels.js"
-import { totalInventory } from "./totalInventory.js"
+
 
 export const searchModel = () => {
   const searchInput = document.getElementById("search-input")
@@ -31,16 +32,14 @@ export const searchModel = () => {
         const deleteButton = document.createElement("button")
         deleteButton.innerText = "BORRAR"
         deleteButton.classList = "deleteBtn"
+        console.log(modelSearch)
         deleteButton.addEventListener("click", () => {
-
-          const index = modelSearch.findIndex((model) => model.id === car.id)
-          if (index !== -1) {
-            modelSearch.splice(index, 1)
-            
-          }
-
-          clearTable.innerHTML = ""
-          search()
+          ////////
+          // ERRORES MIRAR BIEN 
+          ///////
+          deleteModel(car)
+          ///////////
+          //////////
         })
         cell5.appendChild(deleteButton)
       })

@@ -1,4 +1,5 @@
 import { inventory } from "./carModels.js"
+import { deleteModel } from "./deleteModel.js"
 import { totalInventory } from "./totalInventory.js"
 
 export const listModels = () => {
@@ -22,16 +23,9 @@ export const listModels = () => {
     deleteButton.innerText = "BORRAR"
     deleteButton.classList = "deleteBtn"
     deleteButton.addEventListener("click", () => {
-      const clearTable = document.getElementById("clear-table")
-
-      const index = inventory.findIndex((model) => model.id === item.id)
-
-      if (index !== -1) {
-        inventory.splice(index, 1)
-      }
-
-      clearTable.innerHTML = ""
-      listModels()
+      
+      deleteModel
+      deleteModel(item)
     })
     cell5.appendChild(deleteButton)
 

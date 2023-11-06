@@ -149,10 +149,15 @@ footer{
 }
 
 .modal-content{
+    display: flex;
+    flex-direction: column;
     background-color: #eee;
     width: 50%;
+    height: 40%;
     max-width: 400px;
     margin: 100px auto;
     padding: 20px;
     position: relative;
+    
 }
+
