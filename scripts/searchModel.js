@@ -12,7 +12,9 @@ export const searchModel = () => {
   const search = () => {
     // Añadido .toLocalCase() para que se busque independiente de mayusculas o minusculas
 
-    const modelSearch = inventory.filter(item => item.modelo.toLowerCase() === searchInput.value.toLowerCase())
+    const modelSearch = inventory.filter(
+      (item) => item.modelo.toLowerCase() === searchInput.value.toLowerCase()
+    )
 
     if (modelSearch.length > 0) {
       modelSearch.forEach((car) => {
@@ -32,10 +34,10 @@ export const searchModel = () => {
         const deleteButton = document.createElement("button")
         deleteButton.innerText = "BORRAR"
         deleteButton.classList = "deleteBtn"
-       // console.log(modelSearch)
+        // console.log(modelSearch)
         deleteButton.addEventListener("click", () => {
           ////////
-          // ERRORES MIRAR BIEN 
+          // ERRORES MIRAR BIEN
           ///////
           deleteModel(car)
           ///////////
@@ -43,27 +45,31 @@ export const searchModel = () => {
         })
         cell5.appendChild(deleteButton)
         const editButton = document.createElement("button")
-      editButton.innerText = "EDITAR"
-      editButton.classList = "editBtn"
-      editButton.addEventListener("click", () => {
-      editModel(car)
-    })
+        editButton.innerText = "EDITAR"
+        editButton.classList = "editBtn"
+        editButton.addEventListener("click", () => {
+          editModel(car)
+        })
 
-    cell5.appendChild(editButton)
+        cell5.appendChild(editButton)
       })
     }
   }
 
   searchBtn.addEventListener("click", (event) => {
     event.preventDefault()
-    clearTable.innerHTML = ""
+    
 
     if (searchInput.value) {
+      clearTable.innerHTML = ""
       search()
-
+      
       searchInput.value = ""
+      searchResult.innerHTML = ""
     } else {
       searchResult.innerHTML = `Modelo no encontrado`
+      
+      
     }
   })
 }
