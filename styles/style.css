@@ -11,6 +11,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 
@@ -57,7 +58,8 @@ aside form {
     box-shadow: 1px 1px 1px black;
 }
 
-aside form input {
+aside form input, select{
+    font-family: 'Montserrat';
     margin: 10px 10px;
     border-radius: 5px;
     border: 1px solid #a37208;
@@ -197,7 +199,6 @@ footer {
 }
 
 .search {
-
     margin-right: 100px;
     margin-top: 20px;
     padding: 5px 10px 20px 10px;
@@ -207,7 +208,6 @@ footer {
 }
 
 .search input {
-
     border-radius: 5px;
     border: 1px solid #a37208;
     outline: none;
@@ -235,7 +235,7 @@ footer {
     border: none;
     border-radius: 5px;
     padding: 5px;
-    margin-right: 5px;
+    margin: 5px 5px 0 0;
     cursor: pointer;
     background-color: #df0e0e;
     box-shadow: 1px 1px 1px black;
@@ -245,7 +245,6 @@ footer {
     background-color: #ff2727;
     box-shadow: none;
     transform: 0.5;
-
 }
 
 .search-result-style {

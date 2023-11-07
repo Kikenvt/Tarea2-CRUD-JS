@@ -22,7 +22,7 @@ export const insertModels = () =>{
                 precio: modelPrice, 
             }
 
-            inventory.push(newCar)
+            inventory.unshift(newCar)
 
             const clearTable = document.getElementById("clear-table")
             clearTable.innerHTML = ""
