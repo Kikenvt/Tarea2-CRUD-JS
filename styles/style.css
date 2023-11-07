@@ -37,7 +37,8 @@ header {
     box-shadow: 1px 1px 1px black;
     font-family: 'Julius';
     text-align: left;
-    background-color: #eee;
+    background: rgb(238,238,238);
+    background: linear-gradient(143deg, rgba(238,238,238,1) 29%, rgba(92,89,98,1) 93%); 
     color: #a37208;
     grid-area: header;
 }
