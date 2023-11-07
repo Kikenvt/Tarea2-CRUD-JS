@@ -2,6 +2,7 @@ import { inventory } from "./carModels.js"
 import { deleteModel } from "./deleteModel.js"
 import { listModels } from "./listModels.js"
 import { editModel } from "./editModel.js"
+import { totalInventory } from "./totalInventory.js"
 
 export const searchModel = () => {
   const searchInput = document.getElementById("search-input")
@@ -12,11 +13,10 @@ export const searchModel = () => {
   const search = () => {
     // Añadido .toLocalCase() para que se busque independiente de mayusculas o minusculas
 
-    const modelSearch = inventory.filter(
-      (item) => item.modelo.toLowerCase() === searchInput.value.toLowerCase()
-    )
+    const modelSearch = inventory.filter((item) => item.modelo.toLowerCase() === searchInput.value.toLowerCase())
 
     if (modelSearch.length > 0) {
+      
       modelSearch.forEach((car) => {
         const row = clearTable.insertRow()
 
@@ -34,14 +34,9 @@ export const searchModel = () => {
         const deleteButton = document.createElement("button")
         deleteButton.innerText = "BORRAR"
         deleteButton.classList = "deleteBtn"
-        // console.log(modelSearch)
         deleteButton.addEventListener("click", () => {
-          ////////
-          // ERRORES MIRAR BIEN
-          ///////
           deleteModel(car)
-          ///////////
-          //////////
+          search()
         })
         cell5.appendChild(deleteButton)
         const editButton = document.createElement("button")
@@ -49,27 +44,37 @@ export const searchModel = () => {
         editButton.classList = "editBtn"
         editButton.addEventListener("click", () => {
           editModel(car)
+          
         })
 
         cell5.appendChild(editButton)
       })
-    }
+
+        totalInventory(modelSearch)
+
+      } else if (modelSearch.length === 0) {
+
+        searchResult.innerHTML = `Modelo no encontrado`
+        listModels()
+
+      }
   }
 
   searchBtn.addEventListener("click", (event) => {
     event.preventDefault()
-    
-
-    if (searchInput.value) {
-      clearTable.innerHTML = ""
-      search()
-      
-      searchInput.value = ""
-      searchResult.innerHTML = ""
-    } else {
-      searchResult.innerHTML = `Modelo no encontrado`
-      
-      
-    }
+    clearTable.innerHTML = ""
+    search()
   })
 }
+
+const resetSearchButton = document.getElementById("reset-search-btn")
+resetSearchButton.addEventListener("click", () => {
+  const clearTable = document.getElementById("clear-table")
+  const searchResult = document.getElementById("search-result")
+  const searchInput = document.getElementById("search-input")
+
+  searchInput.value = ""
+  clearTable.innerHTML = ""
+  searchResult.innerHTML = ""
+  listModels()
+})

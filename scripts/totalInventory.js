@@ -1,12 +1,10 @@
-import { inventory } from "./carModels.js"
-
-export const totalInventory = () => {
+export const totalInventory = (array) => {
   const totalTemplate = document.getElementById("total-template")
 
   let totalPrice = 0
 
-  inventory.forEach((item) => {
+  array.forEach((item) => {
     totalPrice += (item.cantidad * item.precio)
   })
-  totalTemplate.innerHTML = `Coste total del inventario ${totalPrice} €`
+  totalTemplate.innerHTML = `Coste total: ${totalPrice} €`
 }

@@ -10,7 +10,7 @@ export const deleteModel = (item) => {
     inventory.splice(index, 1)
   }
   clearTable.innerHTML = ""
-  listModels()
+  
 }
 
 

@@ -24,9 +24,8 @@ export const listModels = () => {
     deleteButton.innerText = "BORRAR"
     deleteButton.classList = "deleteBtn"
     deleteButton.addEventListener("click", () => {
-      
-      
       deleteModel(item)
+      listModels()
     })
     cell5.appendChild(deleteButton)
 
@@ -35,10 +34,11 @@ export const listModels = () => {
     editButton.classList = "editBtn"
     editButton.addEventListener("click", () => {
       editModel(item)
+      
     })
 
     cell5.appendChild(editButton)
   })
   // Agregamos aqui la funcion de mostrar total Inventario para que cada vez que editemos, borremos o añadamos un modelos se actualize
-  totalInventory()
+  totalInventory(inventory)
 }

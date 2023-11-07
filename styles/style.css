@@ -2,25 +2,25 @@
     font-family: 'Julius';
     src: url("../assets/fonts/Julius_Sans_One/JuliusSansOne-Regular.ttf") format('truetype');
 }
+
 @font-face {
     font-family: 'Montserrat';
     src: url("../assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format('truetype');
 }
 
-*{
+* {
     margin: 0;
     padding: 0;
 }
-/* TODO: REDIMENSIONAR LOGO */
 
 
-body{
+body {
     background-color: #ddd;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 80px 1fr 60px;
-    grid-template-areas: 
-        "header header header header" 
+    grid-template-areas:
+        "header header header header"
         "sidebar main main main"
         "footer footer footer footer"
     ;
@@ -28,46 +28,47 @@ body{
     min-height: 100vh;
 }
 
-header{
+header {
     padding: 5px;
     margin: 5px;
     border: 2px solid black;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px  black;
-
+    box-shadow: 1px 1px 1px black;
     font-family: 'Julius';
     text-align: left;
     background-color: #eee;
-    color: rgb(163, 114, 8); 
+    color: #a37208;
     grid-area: header;
 }
 
-
-header nav{
-    display: flex;
-    justify-content: right;
-}
-
-aside{
-    
+aside {
     margin: 10px;
     padding: 10px;
     grid-area: sidebar;
 }
 
-aside form{
+aside form {
     display: flex;
     flex-direction: column;
     margin-right: 100px;
-    padding:20px;
+    padding: 20px;
     border: 1px solid;
     border-radius: 5px;
-    box-shadow: 1px 1px 1px  black;
+    box-shadow: 1px 1px 1px black;
 }
 
-main{
+aside form input {
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #a37208;
+    outline: none;
+    padding: 5px;
+}
+
+main {
     margin: 10px;
-    border: 1px solid; 
+    border: 1px solid;
+    border-radius: 5px;
     grid-area: main;
     min-width: 800px;
     height: 800px;
@@ -75,23 +76,40 @@ main{
     overflow-y: auto;
 }
 
-footer{
+footer {
     text-align: center;
     grid-area: footer;
-    
+
 }
 
-.inventory-table-styles{
+.add-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #0000ff;
+    padding: 10px;
+    cursor: pointer;
+    color: #eee;
+    font-size: 1rem;
+    margin: 10px auto;
+    box-shadow: 1px 1px 1px black;
+}
+
+.add-btn:hover {
+    background-color: #3434ff;
+    box-shadow: none;
+    transform: 0.5;
+}
+
+.inventory-table-styles {
     border-collapse: collapse;
     border: 1px solid;
-    border-radius: 10px; 
+    border-radius: 10px;
     width: 90%;
     margin: 20px auto;
-    
 }
 
 .inventory-table-styles th,
-.inventory-table-styles td{
+.inventory-table-styles td {
     border: 1px solid #cccc;
     font-family: 'Montserrat';
     padding: 8px;
@@ -99,46 +117,46 @@ footer{
     font-size: 1.5rem;
 }
 
-.total-costs{
+.total-costs {
     text-align: right;
 }
 
-.deleteBtn{
+.deleteBtn {
     border: none;
     border-radius: 5px;
     padding: 10px;
     margin-right: 5px;
     cursor: pointer;
-    background-color: red;
-    box-shadow: 1px 1px 1px  black;
+    background-color: #df0e0e;
+    box-shadow: 1px 1px 1px #000000;
 }
 
-.editBtn{
+.editBtn {
     border: none;
     border-radius: 5px;
     padding: 10px;
     margin-right: 5px;
     cursor: pointer;
-    background-color: blue;
-    box-shadow: 1px 1px 1px  black;
+    background-color: #0000ff;
+    box-shadow: 1px 1px 1px black;
     color: white;
 }
 
-.deleteBtn:hover{
-    background-color: rgb(255, 39, 39);
+.deleteBtn:hover {
+    background-color: #ff2727;
     box-shadow: none;
     transform: 0.5;
 
 }
 
-.editBtn:hover{
-    background-color: rgb(52, 52, 255);
+.editBtn:hover {
+    background-color: #3434ff;
     box-shadow: none;
     transform: 0.5;
 }
 
 
-.edit-modal-styles{
+.edit-modal-styles {
     display: none;
     position: fixed;
     top: 0;
@@ -148,7 +166,7 @@ footer{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-.modal-content{
+.modal-content {
     display: flex;
     flex-direction: column;
     background-color: #eee;
@@ -158,6 +176,83 @@ footer{
     margin: 100px auto;
     padding: 20px;
     position: relative;
-    
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    margin-right: 10px;
+    padding: 20px;
+}
+
+.edit-form input {
+    margin: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #a37208;
+    outline: none;
+    padding: 5px;
+}
+
+.search {
+
+    margin-right: 100px;
+    margin-top: 20px;
+    padding: 5px 10px 20px 10px;
+    border: 1px solid;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px black;
+}
+
+.search input {
+
+    border-radius: 5px;
+    border: 1px solid #a37208;
+    outline: none;
+    padding: 5px;
+}
+
+.search-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #0000ff;
+    box-shadow: 1px 1px 1px black;
+    color: white;
+}
+
+.search-btn:hover {
+    background-color: #3434ff;
+    box-shadow: none;
+    transform: 0.5;
+}
+
+.cancel-btn {
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 5px;
+    cursor: pointer;
+    background-color: #df0e0e;
+    box-shadow: 1px 1px 1px black;
+}
+
+.cancel-btn:hover {
+    background-color: #ff2727;
+    box-shadow: none;
+    transform: 0.5;
+
+}
+
+.search-result-style {
+    margin-top: 10px;
+    color: #df0e0e;
+    font-family: 'Julius';
+    font-size: 1.1rem;
+    font-weight: bold;
 }
 
